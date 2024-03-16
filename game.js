@@ -25,7 +25,11 @@ function boxClicked(e) {
             let winning_blocks = playerHasWon()
 
             winning_blocks.map( box => boxes[box].style.backgroundColor=winnerIndicator)
-            exit()
+            return 
+        }
+        else if (spaces.every(space => space !== null)) {
+            playerText.innerHTML = 'It\'s a tie!'
+            return
         }
 
         currentPlayer = currentPlayer == X_TEXT ? O_TEXT : X_TEXT
